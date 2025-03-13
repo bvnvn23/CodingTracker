@@ -10,6 +10,10 @@ namespace CodingTracker.Models
         public string EndTime { get; set; }
         public string Duration { get; set; }
 
+        public CodingSessionClass()
+        {
+        }
+        
         public CodingSessionClass(int id, string date, string startTime, string endTime, string duration)
         {
             Id = id;

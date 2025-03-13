@@ -12,6 +12,10 @@ namespace CodingTracker.Helpers
             if (DateTime.TryParseExact(startTime, "HH:mm", null, System.Globalization.DateTimeStyles.None, out DateTime start) &&
                 DateTime.TryParseExact(endTime, "HH:mm", null, System.Globalization.DateTimeStyles.None, out DateTime end))
             {
+                if (end < start)
+                {
+                    end = end.AddDays(1);
+                }
                 return end - start;
             }
             else

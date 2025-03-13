@@ -10,6 +10,7 @@ namespace CodingTracker
 
         public void MainMenu()
         {
+            Console.Clear();
 
             AnsiConsole.Markup("[Yellow]Welcome to Coding Tracker![/]\n");
 
@@ -27,10 +28,10 @@ namespace CodingTracker
                     ChooseHowToTrackTime();
                     break;
                 case Enums.MenuChoices.ViewLogs:
-                    //ViewLogs();
+                    controller.ViewLogs();
                     break;
                 case Enums.MenuChoices.DeleteLogs:
-                    //DeleteLogs();
+                    controller.DeleteLogs();
                     break;
                 case Enums.MenuChoices.Exit:
                     Environment.Exit(0);
