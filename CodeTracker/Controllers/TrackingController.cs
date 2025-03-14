@@ -24,6 +24,11 @@ namespace CodingTracker.Controllers
 
             connection.Open();
             connection.Execute(sql, new { Date = date, StartTime = startingTime, EndTime = endingTime, Duration = duration.TotalMinutes });
+
+            AnsiConsole.MarkupLine("[green]Time tracked successfully![/]");
+            AnsiConsole.MarkupLine($"[yellow]Duration: {duration.Hours} hours and {duration.Minutes} minutes[/]");
+            AnsiConsole.MarkupLine($"[yellow]Press Enter to continue[/]");
+            Console.ReadKey();
         }
 
         public void ViewLogs()

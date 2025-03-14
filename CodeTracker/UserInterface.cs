@@ -25,7 +25,7 @@ namespace CodingTracker
             switch (menu)
             {
                case Enums.MenuChoices.Tracking:
-                    ChooseHowToTrackTime();
+                    controller.TrackTime();
                     break;
                 case Enums.MenuChoices.ViewLogs:
                     controller.ViewLogs();
@@ -40,29 +40,6 @@ namespace CodingTracker
 
         }
 
-        public void ChooseHowToTrackTime()
-        {
-            var choices = Enum.GetValues(typeof(Enums.TrackTimeChoices)).Cast<Enums.TrackTimeChoices>().ToArray();
-            var menu = AnsiConsole.Prompt(
-                new SelectionPrompt<Enums.TrackTimeChoices>()
-                    .Title("[Yellow]Choose how to track data:[/]")
-                    .HighlightStyle("yellow")
-                    .PageSize(10)
-                    .AddChoices(choices));
-
-
-
-            switch (menu)
-            {
-                case Enums.TrackTimeChoices.Timer:
-                    break;
-                case Enums.TrackTimeChoices.EnterData:
-                    controller.TrackTime();
-                    break;
-                case Enums.TrackTimeChoices.MainMenu:
-                    MainMenu();
-                    break;
-            }
-        }
     }
+        
 }
